@@ -1,0 +1,15 @@
+CC = gcc
+
+all: main
+
+main: main.o image.o
+	$(CC)  -o main main.o image.o
+
+main.o: main.c image.h
+	$(CC)  -c main.c
+
+image.o: image.c image.h
+	$(CC) -c image.c
+
+clean:
+	rm -f main main.o image.o
